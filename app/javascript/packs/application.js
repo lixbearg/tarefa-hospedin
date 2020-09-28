@@ -3,14 +3,15 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import Rails from '@rails/ujs'
 import "bootstrap"
 import "utils/swal"
 
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
-require("flatpickr")
+import flatpickr from "flatpickr"
+import { Portuguese } from "flatpickr/dist/l10n/pt.js"
+
+import '@client-side-validations/client-side-validations'
+import '@client-side-validations/simple-form/dist/simple-form.bootstrap4'
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -19,6 +20,9 @@ require("flatpickr")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+flatpickr.localize(Portuguese);
 document.addEventListener('DOMContentLoaded', function() {
   flatpickr('.datepicker');
 })
+
+Rails.start()

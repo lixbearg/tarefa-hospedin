@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10">
-      <%= simple_form_for @task, html: { id: 'task-form'} do |f|%>
+      <%= simple_form_for @task, validate: true, html: { id: 'task-form'} do |f|%>
         <div class="card">
           <div class="card-body">    
             <div class="row" >
@@ -95,9 +95,9 @@
                 </div>
               </div>
             </div>
-            <div class="row" >
-              <div class="col-md-6">
-                <div class="form-group">
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <div class="form-group float-right">
                   <%=
                   f.button( :submit,
                     class: "btn btn-outline-info"                      
