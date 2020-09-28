@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= simple_form_for @task, html: { id: 'task-form'} do |f|%>
+        <div class="card">
+          <div class="card-body">    
+            <div class="row" >
+              <div class="col-md-12">
+                <div class="form-group">
+                  <%= 
+                  f.input( :name,
+                    as: :string,
+                    required: true,
+                    label: 'Título',                    
+                    input_html: { 
+                      class: "form-control" 
+                    } 
+                  )
+                  %>
+                </div>
+              </div>      
+            </div>
+            <div class="row" >
+              <div class="col-md-12">
+                <div class="form-group">
+                  <%= 
+                  f.input( :description,
+                    as: :text,
+                    required: true,
+                    label: 'Descrição',
+                    input_html: { 
+                      class: "form-control" 
+                    } 
+                  )
+                  %>
+                </div>
+              </div>      
+            </div>
+            <div class="row" >
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= 
+                  f.association( :user,               
+                    required: true,
+                    label: 'Responsável',
+                    input_html: { 
+                      class: "form-control" 
+                    } 
+                  )
+                  %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= 
+                  f.input( :due_at,
+                    as: :string,
+                    required: true,
+                    label: 'Data',
+                    input_html: { 
+                      class: "form-control datepicker" 
+                    } 
+                  )
+                  %>
+                </div>
+              </div>     
+            </div>
+            <div class="row" >
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= 
+                  f.input( :priority,
+                    collection: Task.priorities.keys,
+                    required: true,
+                    label: 'Prioridade',
+                    input_html: { 
+                      class: "form-control" 
+                    } 
+                  )
+                  %>
+                </div>
+              </div>      
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= 
+                  f.input( :status,
+                    collection: Task.statuses.keys,
+                    required: true,
+                    label: 'Status',
+                    input_html: { 
+                      class: "form-control" 
+                    } 
+                  )
+                  %>
+                </div>
+              </div>
+            </div>
+            <div class="row" >
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%=
+                  f.button( :submit,
+                    class: "btn btn-outline-info"                      
+                  )
+                  %>
+                  <%= link_to 'Cancelar', tasks_path, class: "btn btn-outline-danger" %>
+                </div>
+              </div>           
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

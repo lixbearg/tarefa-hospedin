@@ -1,0 +1,27 @@
+<div>
+  <h1 class="text-center mt-4">Usuários</h1>  
+</div>
+<div class="flickr_pagination">
+  <%= will_paginate @users, :container => false %>
+</div>
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th colspan="2">Ações</th>
+    </tr> 
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Editar', edit_user_path(user), class: "btn btn-outline-info" %></td>
+        <td><%= link_to "Excluir", user, class: "btn btn-outline-danger", method: :delete, data: {confirm: "Excluir usuário?"} %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to "Adicionar", new_user_path, class: "btn btn-outline-info" %>
+</div>
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @tasks, :container => false %>
+</div>

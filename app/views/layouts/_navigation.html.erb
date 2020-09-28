@@ -5,10 +5,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
+    <ul class="navbar-nav mr-auto"> 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Tarefas
@@ -17,7 +14,16 @@
           <%= link_to "Criar nova tarefa", new_task_path, class: "dropdown-item" %>        
           <%= link_to "Ver tarefas", tasks_path, class: "dropdown-item" %>          
         </div>
-      </li>    
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Usuários
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Criar novo usuário", new_user_path, class: "dropdown-item" %>        
+          <%= link_to "Ver usuários", users_path, class: "dropdown-item" %>          
+        </div>
+      </li>
     </ul>
     <a class="nav-link" href="#">Sair</a>
   </div>

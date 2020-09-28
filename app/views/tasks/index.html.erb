@@ -1,0 +1,35 @@
+<div>
+  <h1 class="text-center mt-4">Tarefas</h1>  
+</div>
+<div class="flickr_pagination">
+  <%= will_paginate @tasks, :container => false %>
+</div>
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>Status</th>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Responsável</th>
+      <th>Data</th>
+      <th>Prioridade</th>
+      <th colspan="2">Ações</th>
+    </tr> 
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= get_task_status_badge(task) %></td>
+        <td><%= task.name %></td>
+        <td><%= task.description %></td>
+        <td><%= task.user.name %></td>
+        <td><%= I18n.l(task.due_at, format: '%d/%m/%Y') %></td>
+        <td><%= task.priority %></td>
+        <td><%= link_to 'Editar', edit_task_path(task), class: "btn btn-outline-info" %></td>
+        <td><%= link_to "Excluir", task, class: "btn btn-outline-danger", method: :delete, data: {confirm: "Excluir tarefa?"} %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to "Adicionar", new_task_path, class: "btn btn-outline-info" %>
+</div>
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @tasks, :container => false %>
+</div>
