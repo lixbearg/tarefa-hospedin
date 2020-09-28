@@ -23,7 +23,8 @@ const showSwalDialog = element => {
     cancelButtonClass: 'btn btn-light',
     showCancelButton: true,
     confirmButtonText: 'Confirmar',
-    cancelButtonText: 'Cancelar'
+    cancelButtonText: 'Cancelar',
+    target: '#page-content'
   }).then(result => confirmed(element, result))
 }
 
