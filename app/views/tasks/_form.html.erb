@@ -58,7 +58,8 @@
                     required: true,
                     label: 'Data',
                     input_html: { 
-                      class: "form-control datepicker" 
+                      class: "form-control datepicker" ,
+                      value: get_formatted_date(f.object.due_at)
                     } 
                   )
                   %>

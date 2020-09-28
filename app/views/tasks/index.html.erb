@@ -21,7 +21,7 @@
         <td><%= task.name %></td>
         <td><%= task.description %></td>
         <td><%= task.user.name %></td>
-        <td><%= I18n.l(task.due_at, format: '%d/%m/%Y') %></td>
+        <td><%= get_formatted_date(task.due_at) %></td>
         <td><%= Task.human_enum_name(:priority, task.priority) %></td>
         <td><%= link_to 'Editar', edit_task_path(task), class: "btn btn-outline-info" %></td>
         <td><%= link_to "Excluir", task, class: "btn btn-outline-danger", method: :delete, data: {'confirm-swal': 'Você deseja excluir o registro?', 'swal-text': 'Você não poderá reverter esta ação!'} %></td>

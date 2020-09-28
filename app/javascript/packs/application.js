@@ -22,7 +22,9 @@ import '@client-side-validations/simple-form/dist/simple-form.bootstrap4'
 
 flatpickr.localize(Portuguese);
 document.addEventListener('DOMContentLoaded', function() {
-  flatpickr('.datepicker');
+  flatpickr('.datepicker', {
+    dateFormat: "d/m/Y"
+  });
 })
 
 Rails.start()

@@ -11,3 +11,7 @@ module TasksHelper
     end
   end
 end
+
+def get_formatted_date(value)
+  return I18n.l(value, format: :short_date) if value.present?
+end

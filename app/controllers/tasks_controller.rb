@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, except: [:index, :create, :new]
+  before_action :require_user
 
   def index
     @tasks = Task.order(:id).page(params[:page]).per(5)
