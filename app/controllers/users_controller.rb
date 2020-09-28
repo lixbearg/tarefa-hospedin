@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, except: [:index, :create, :new]
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 5)
+    @users = User.order(:id).page(params[:page]).per(5)
   end
 
   def new

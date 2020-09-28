@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'will_paginate', '~> 3.1.0'
+gem 'kaminari'
 gem 'flatpickr'
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'

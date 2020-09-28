@@ -1,10 +1,10 @@
 <div>
-  <h1 class="text-center mt-4">Tarefas</h1>  
-</div>
-<div class="flickr_pagination">
-  <%= will_paginate @tasks, :container => false %>
+  <h1 class="text-center mt-4 mb-4">Tarefas</h1>  
 </div>
 <div class="container">
+  <div class="mb-2 float-right">
+    <%= link_to "Adicionar", new_task_path, class: "btn btn-outline-info" %>
+  </div>
   <table class="table">
     <tr>
       <th>Status</th>
@@ -22,14 +22,13 @@
         <td><%= task.description %></td>
         <td><%= task.user.name %></td>
         <td><%= I18n.l(task.due_at, format: '%d/%m/%Y') %></td>
-        <td><%= task.priority %></td>
+        <td><%= Task.human_enum_name(:priority, task.priority) %></td>
         <td><%= link_to 'Editar', edit_task_path(task), class: "btn btn-outline-info" %></td>
-        <td><%= link_to "Excluir", task, class: "btn btn-outline-danger", method: :delete, data: {confirm: "Excluir tarefa?"} %></td>
+        <td><%= link_to "Excluir", task, class: "btn btn-outline-danger", method: :delete, data: {'confirm-swal': 'Você deseja excluir o registro?', 'swal-text': 'Você não poderá reverter esta ação!'} %></td>
       </tr>
     <% end %>
   </table>
-  <%= link_to "Adicionar", new_task_path, class: "btn btn-outline-info" %>
-</div>
-<div class="flickr_pagination mb-4">
-  <%= will_paginate @tasks, :container => false %>
+  <div class="float-right">
+    <%= paginate @tasks %>
+  </div>
 </div>

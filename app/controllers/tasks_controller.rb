@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, except: [:index, :create, :new]
 
   def index
-    @tasks = Task.paginate(page: params[:page], per_page: 5)
+    @tasks = Task.order(:id).page(params[:page]).per(5)
   end
 
   def new

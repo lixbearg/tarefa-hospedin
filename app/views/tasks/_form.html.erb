@@ -70,7 +70,7 @@
                 <div class="form-group">
                   <%= 
                   f.input( :priority,
-                    collection: Task.priorities.keys,
+                    collection: Task.human_collection(:priority),
                     required: true,
                     label: 'Prioridade',
                     input_html: { 
@@ -84,7 +84,7 @@
                 <div class="form-group">
                   <%= 
                   f.input( :status,
-                    collection: Task.statuses.keys,
+                    collection: Task.human_collection(:status),
                     required: true,
                     label: 'Status',
                     input_html: { 

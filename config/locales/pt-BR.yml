@@ -136,6 +136,7 @@ pt-BR:
     messages:
       accepted: deve ser aceito
       blank: não pode ficar em branco
+      required: não pode ficar em branco
       confirmation: não está de acordo com a confirmação
       empty: não pode ficar vazio
       equal_to: deve ser igual a %{count}
@@ -151,17 +152,12 @@ pt-BR:
       not_a_number: não é um número
       not_an_integer: não é um número inteiro
       odd: deve ser ímpar
-      pendent_reservations: 'não pode ser alterado por que possui reservas pendentes, troque-as de locan antes de inativar'
       record_invalid: ! 'Erro: %{errors}'
       taken: já está em uso
       too_long: ! 'é muito longo (máximo: %{count} caracteres)'
       too_short: ! 'é muito curto (mínimo: %{count} caracteres)'
       wrong_length: não possui o tamanho esperado (%{count} caracteres)
       not_a_date: "não é uma data válida"
-      can_make_a_reservation_to_tent: Não é possível criar reservas para barraca
-      check_out_can_be_greather_than_check_in:  A data de check-in não pode ser menor ou igual a de check-out
-      camper_already_hosted: O titular já está acampado
-      camp_dont_belongs_to_camper: O camp informado não é do titular
     template:
       body: ! 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
@@ -272,6 +268,7 @@ pt-BR:
           low: Baixa
           high: Alta
           urgent: Urgente
+        user_id: Responsável
         user: Responsável
         statuses:
           pending: Em espera
